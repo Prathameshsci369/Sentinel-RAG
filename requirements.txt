@@ -1,0 +1,55 @@
+# ==========================================
+# Web Framework & Server
+# ==========================================
+fastapi>=0.115.0,<0.116.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+
+# ==========================================
+# Data Validation & Configuration
+# ==========================================
+pydantic>=2.0.0,<3.0.0
+pydantic-settings>=2.2.0,<3.0.0
+email-validator>=2.1.0
+python-dotenv>=1.0.0
+
+# ==========================================
+# Database & Migrations
+# ==========================================
+# Using psycopg[binary] explicitly as it prevents arbitrary SQL execution at the C level (security best practice)
+psycopg[binary]>=3.1.0
+sqlalchemy>=2.0.0,<3.0.0
+alembic>=1.13.0
+
+# ==========================================
+# Security & Authentication
+# ==========================================
+# Native bcrypt is used INSTEAD of passlib (passlib is broken on Python 3.13)
+bcrypt>=4.0.0
+pyjwt>=2.8.0
+
+# ==========================================
+# Background Task Processing
+# ==========================================
+redis>=5.0.0
+celery[redis]>=5.3.0
+
+# ==========================================
+# Vector Database (Qdrant)
+# ==========================================
+qdrant-client>=1.7.0
+
+# ==========================================
+# AI / LLM / Embeddings
+# ==========================================
+# sentence-transformers handles BOTH the embedding model (bge-small) and the reranker (cross-encoder)
+sentence-transformers>=2.7.0
+# HuggingFace hub is a required implicit dependency for local model downloads
+huggingface_hub>=0.23.0
+# OpenAI SDK is strictly used as an HTTP client to talk to the local llama.cpp server
+openai>=1.12.0
+
+# ==========================================
+# Enterprise Observability
+# ==========================================
+structlog>=24.1.0
